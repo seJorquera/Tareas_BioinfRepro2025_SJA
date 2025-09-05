@@ -1,0 +1,169 @@
+---
+title: "Tarea03"
+author: "Samuel Jorquera"
+date: "2025-09-04"
+output: html_document
+---
+
+# Tarea 03
+
+**Author:** Samuel Jorquera
+
+## Primeros ejercicios
+
+-   Crea una variable con el logaritmo base 10 de 50 y súmalo a otra variable cuyo valor sea igual a 5.
+
+```{r}
+var1 <- 5
+var2 <- log10(50)
+
+var1 + var2
+```
+
+-   Suma el número 2 a todos los números entre 1 y 150.
+
+```{r}
+vec1 <- c(1:150)
+vec1 + 2
+```
+
+-   ¿Cuántos números son mayores a 20 en el vector -13432:234?
+
+```{r}
+vec2 <- c(-13432:234)
+
+length(vec2[vec2>20])
+```
+
+## Ejercicio: carga de archivo
+
+-   Carga en R el archivo PracUni1Ses3/maices/meta/maizteocintle_SNP50k_meta_extended.txt y ponlo en un objeto de R llamado meta_maiz.
+
+```{r}
+meta_maiz <- read.delim(file="../data/PracUni1Ses3/maices/meta/maizteocintle_SNP50k_meta_extended.txt")
+
+str(meta_maiz)
+
+```
+
+## Ejercicio: Loop
+
+-   Escribe un for loop para que divida 35 entre 1:10 e imprima el resultado en la consola.
+
+```{r}
+for (i in 1:10){
+  print(35/i)
+}
+```
+
+-   Modifica el loop anterior para que haga las divisiones solo para los números nones (con un comando, NO con c(1,3,...)). Pista: next.
+
+```{r}
+for (i in 1:10){
+  if(i %% 2 == 0){next}
+  else{
+    print(35/i)
+  }
+}
+```
+
+-   Modifica el loop anterior para que los resultados de correr todo el loop se guarden en una df de dos columnas, la primera debe tener el texto "resultado para x" (donde x es cada uno de los elementos del loop) y la segunda el resultado correspondiente a cada elemento del loop. Pista: el primer paso es crear un vector fuera del loop. Ejemplo:
+
+```{r}
+vec3 <- NULL
+for (i in 1:10){
+  vec3 <- rbind(vec3, 
+                data.frame(
+                  col1 = paste0("resultado para ", i),
+                  col2 = 35/i))
+}
+vec3
+```
+
+## Ejercicio: Preguntas sobre 1.IBR_testing.nr
+
+Abre en RStudio el script `PracUni1Ses3/mantel/bin/1.IBR_testing.r.` Este script realiza un análisis de aislamiento por resistencia con Fst calculadas con ddRAD en Berberis alpina.
+
+-   **¿qué hacen los dos for loops del script?**
+
+El primer loop consiste en el cálcula la matriz distancia efectiva y su media para una serie de archivos de nombre "Balpina_present", "Balpina_ccsm", etc. Para ello, primero establece la ruta de los archivos, luego aplica una función eff.dist, que calcula la distancia matriz de distancia efectiva. Luego calcula la media y la guarda en la variable mean.effD. Finalmente, asigna la variables "B.present", "B.ccsm", etc, la matriz eff.dist; y la variable "B.mean.present", "B.mean.ccsm", etc, la media de la matriz de distancia efectiva.
+
+Por otro lado, el segundo loop, sobre cada variable "B.present", "B.ccsm", etc, aplica un test mantel (mantel.rtest, del paquete *ade4*) contra la matriz de distancia efectiva "B.Fstlin". Finalmente grafica la distancia efectiva, y guarda los resultados del mantel test en el dataframe IBRresults.
+
+-   **¿qué paquetes necesitas para correr el script?** Se utilizan en total, 3 paquetes: *ade4*, *ggplot2* y *sp*.
+
+-   **¿qué archivos necesitas para correr el script?** Se necesitan los archivos `~/spatial/surveyed_mountains.tsv`, `~/genetic/BerSS.sumstats.tsv"`, `~/genetic//BerSS.fst_summary.tsv` y, finalmente los archivos `~/spatial/resdist/Balpina_*`.
+
+## Ejercicio: Funciones
+
+-   Escribe una función llamada `calc.tetha` que te permita calcular tetha dados Ne y u como argumentos. Recuerda que tetha =4Neu.
+
+La función puede ser encontrada en el archivo: `~/calc.tetha.R`.
+
+```{r}
+calc.theta <- function(Ne, u) {
+  ##Arguments:
+  #Ne: Effective population size
+  #u: (mu) - per-generation mutation rate of the population of interest
+  
+  ##Function
+  #calculate theta
+  theta <-  4*Ne*u
+  
+  theta
+}
+```
+
+-   Al script del ejercicio de las pruebas de Mantel, agrega el código necesario para realizar un Partial Mantel test entre la matriz Fst, y las matrices del presente y el LGM, parcializando la matriz flat. Necesitarás el paquete *vegan*.
+
+Para este ejercicio, se aplica la función `mantel.partial` del paquete *vegan*. En particular, sólo se requiere de un único cambio en el segundo loop del código:
+
+En particular, la función `mantel.rtest`, en la línea de código:
+
+```{r include= FALSE, eval=FALSE}
+  # Mantel test 
+    print("Mantel test")
+    x<-mantel.rtest(as.dist(get(paste0("B.",i))), as.dist(B.FstLin), nrepet=10000)
+    print(x)
+```
+
+Se modifica por `mantel.partial`:
+
+```{r include= FALSE, eval=FALSE}
+  # Mantel test 
+    print("Mantel test")
+    x<-mantel.partial(as.dist(get(paste0("B.",i))), as.dist(B.FstLin),
+                      method = "spearman",
+                      permutations = 10000)
+    print(x)
+```
+
+Es importante notar que la linea de la función `mantel.partial`, a diferencia de la anterior, recibe un método de evaluación (Pearson, Spearman o Kendall), en función de la normalidad de los datos. Además, `nrepet =` se modifica por `permutations =`.
+
+## Ejercicio: Script
+
+**Ejercicio**: Escribe un script que debe estar guardado en `PracUni1Ses3/maices/bin` y llamarse `ExplorandoMaiz.R`, que 1) cargue en R el archivo `PPracUni1Ses3/maices/meta/maizteocintle_SNP50k_meta_extended.txt` y 2) responda lo siguiente.
+
+-   ¿Qué tipo de objeto creamos al cargar la base?
+
+-   ¿Cómo se ven las primeras 6 líneas del archivo?
+
+-   ¿Cuántas muestras hay?
+
+-   ¿De cuántos estados se tienen muestras?
+
+-   ¿Cuántas muestras fueron colectadas antes de 1980?
+
+-   ¿Cuántas muestras hay de cada raza?
+
+-   En promedio ¿a qué altitud fueron colectadas las muestras?
+
+-   ¿Y a qué altitud máxima y mínima fueron colectadas?
+
+-   Crea una nueva df de datos sólo con las muestras de la raza Olotillo
+
+-   Crea una nueva df de datos sólo con las muestras de la raza Reventador, Jala y Ancho
+
+-   Escribe la matriz anterior a un archivo llamado "submat.cvs" en /meta.
+
+El archivo puede encontrarse en `~/maices/bin/ExplorandoMaiz.R`
