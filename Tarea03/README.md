@@ -1,7 +1,7 @@
 # Tarea 03
 **Author:** Samuel Jorquera
 
-Contains the data a scripts for the resolution of homework 3.
+Contains the data and scripts for the resolution of homework 3.
 
 All scripts and .Rmd files can be found in [**bin**](bin/).
 
