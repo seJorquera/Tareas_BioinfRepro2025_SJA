@@ -15,11 +15,11 @@ En particular, se escoge este estudio pues presenta 46 pacientes con infección 
 
 Summary:
 
-[](../img/Summary.png)
+![](../img/Summary.png)
 
 Clinical data:
 
-[](../img/Clinical_data.png)
+![](../img/Clinical_data.png)
 
 ## Análisis genómico
 Si observamos los genes con mayor cantidad de mutación, podremos observar que estos son
@@ -55,19 +55,19 @@ Por otro lado, con respecto a los genes *SYNE1* y *CSMD1*, se aprecia que CSMD p
 
 Se observa que todas las mutaciones son missense, con excepción de ún caso donde es missense
 
-[](../img/syne1_mut.png)
+![](../img/syne1_mut.png)
 
 Además, todas estas mutaciones son puntuales.
 
 - ¿Qué vías de señalización aparecen alteradas en la pestaña Pathways?
 Se encuentran 10 vías de señalización alteradas, de entre las cuales, en ningúna SYNE-1 juega un papel clave.
 
-[](../img/pathways.png)
+![](../img/pathways.png)
 
 ## Análisis clínico
 Se encuentra la siguiente distribución de sexo y edad de diagnóstico:
-[](../img/sex.png)
-[](../img/diag_age.png)
+![](../img/sex.png)
+![](../img/diag_age.png)
 
 Se tiene entonces que:
 - El grupo no alterado (que no presenta mutaciones en syne1) presenta una edad máxima y mínima de 89 y 32, respectivamente. Así, tiene un rango de edad de 57 años y una mediana de 67.5
@@ -75,7 +75,7 @@ Se tiene entonces que:
 
 Se observa que el grupo SYNE-1 alterado presenta, aparentemente, mayor edad de diagnóstico. Sin embargo, observando al hacer comparaciones estadísticas, se encuentran las siguientes asociaciones clínicas:
 
-[](../img/clin_assoc.png)
+![](../img/clin_assoc.png)
 
 Así, ni la edad de diagnóstico, ni el sexo parecen ser más predominantes respecto a las mutaciones SYNE1. Además, se observa que las diferencias respecto a la infección de *H. pylori* no son significativas, posiblemente debido a la baja potencia estadística).
 
@@ -84,7 +84,7 @@ Se aprecia una tendencia a que los pacientes de adenocarcinoma gástrico no infe
 
 SYNE1 es un gen particularmente poco estudiado. Interactúa con proteínas del enlace nucleo-citoesqueleto (LNC). En particular, estudios entre este gen y el cáncer son poco. Haciendo búsqueda rápida por PubMed, se encuentran 145 artículos al respecto:
 
-[](../img/pubmed.png)
+![](../img/pubmed.png)
 
 Así, es un gen a estudiar cuyos mecanismos asociados al cáncer podrían profundizar nuestro entendimiento de esta enfermedad a nivel celular y estructural.
 
