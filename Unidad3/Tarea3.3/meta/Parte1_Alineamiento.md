@@ -30,7 +30,8 @@ Finalmente, queda guardado en el archivo de texto ```first_soft-clipping.txt```
 Leemos ```first_soft-clipping.txt```:
 
 ```
-first_soft-clipping.txt" 1L, 635C                                                                                                                                                M03564:2:000000000-D29D3:1:1101:15395:1593	83	chr11	32456388	60	20S231M	=	32456388	-231	#seq	NM:i:0	MD:Z:231	MC:Z:134M	AS:i:231	XS:i:23
+first_soft-clipping.txt" 1L, 635C
+M03564:2:000000000-D29D3:1:1101:15395:1593	83	chr11	32456388	60	20S231M	=	32456388	-231	#seq	NM:i:0	MD:Z:231	MC:Z:134M	AS:i:231	XS:i:23
 ```
 
 La sexta linea consiste en el CIGAR: ```20S231M```, lo que se traduce en que los primeros 20 nucleótidos son de soft-clipping, y los siguientes 231 son lecturas sin gap (no necesariamente coinciden con la referencia).
