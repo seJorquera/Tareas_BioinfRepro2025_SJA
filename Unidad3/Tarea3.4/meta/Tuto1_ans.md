@@ -9,7 +9,7 @@ Se obtienen los datos desde el archivo online [https://resources.qiagenbioinform
 
 Luego, los archivos se importan de manera estándar, quedando almacenados en el directorio ```CLC_data```.
 
-![](../img/import.png)
+![](../img/Import.png)
 **Figure 1:** Import of data in the CLC software
 
 
