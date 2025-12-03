@@ -1,0 +1,2 @@
+patient,sex,status,sample,cram,crai
+S10,NA,1,S10,../results/preprocessing/recalibrated/S10/S10.recal.cram,../results/preprocessing/recalibrated/S10/S10.recal.cram.crai

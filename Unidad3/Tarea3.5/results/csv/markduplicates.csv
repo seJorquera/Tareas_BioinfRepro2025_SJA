@@ -1,0 +1,2 @@
+patient,sex,status,sample,cram,crai,table
+S10,NA,1,S10,../results/preprocessing/markduplicates/S10/S10.md.cram,../results/preprocessing/markduplicates/S10/S10.md.cram.crai,../results/preprocessing/recal_table/S10/S10.recal.table

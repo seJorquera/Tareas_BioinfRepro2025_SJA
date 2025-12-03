@@ -1,0 +1,13 @@
+Module	Section	Sample Name	Source
+FastQC (raw)	all_sections	S10-L1_1	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/5/S10-L1_1_fastqc.zip
+FastQC (raw)	all_sections	S10-L1_2	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/6/S10-L1_2_fastqc.zip
+FastP (Read preprocessing)	all_sections	S10-L1	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/3/S10-L1.fastp.json
+GATK4 MarkDuplicates	DuplicationMetrics	S10.md	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/7/S10.md.cram.metrics
+Samtools Flagstat	stats	S10.md	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/8/S10.md.cram.stats
+Samtools Flagstat	stats	S10.recal	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/12/S10.recal.cram.stats
+Mosdepth	genome_results	S10.md	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/9/S10.md.mosdepth.region.dist.txt
+Mosdepth	genome_results	S10.recal	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/13/S10.recal.mosdepth.region.dist.txt
+GATK4 BQSR	base_recalibrator	S10.recal.table	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/11/S10.recal.table
+Bcftools	stats	S10.mutect2.filtered	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/15/S10.mutect2.filtered.bcftools_stats.txt
+Vcftools	all_sections	TsTv by counts	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/18/S10.mutect2.filtered.TsTv.count
+Vcftools	all_sections	TsTv by quality	/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/code/work/83/b065df41dd72a23357d8bbfd2fbc4d/16/S10.mutect2.filtered.TsTv.qual

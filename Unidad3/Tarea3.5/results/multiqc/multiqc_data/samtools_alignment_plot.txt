@@ -1,0 +1,3 @@
+Sample	Mapped (with MQ>0)	MQ0	Unmapped
+S10.md	68400.0	136.0	1798.0
+S10.recal	68400.0	136.0	234.0

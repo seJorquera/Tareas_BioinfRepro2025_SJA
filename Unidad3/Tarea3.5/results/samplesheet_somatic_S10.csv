@@ -1,0 +1,2 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2
+S10,NA,1,S10,L1,/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/data/R1.fastq.gz,/home/bioinfo1/sjorquera/Tareas/Unidad3/pipeline_sarek/data/R2.fastq.gz
