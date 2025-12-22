@@ -49,6 +49,4 @@ Finalmente, se aplica un agrupamiento jerárquico usando el complemento de corre
 
 **Figura 4**: Dendrograma de genes.
 
-Se aprecian 4 grupos con claras diferencias,
-
-
+Se aprecian 4 grupos con claras diferencias, el último grupo (ubicado más a la derecha del dendrograma), por su parte, presenta una bifurcación extra, de modo que se podría, nuevamente separar en 5 grupos.
