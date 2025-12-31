@@ -35,7 +35,7 @@ Observamos que, aparentemente, tanto para individuos WT como mutantes, hay una d
 
 Así mismo, se puede establecer una figura analóga a la anterior pero para los genotipos:
 
-![](../results/diff_expr/pseudocounts/pair_expression_genotyoe.png)
+![](../results/diff_expr/pseudocounts/pair_expression_genotype.png)
 
 **Figura 3**: Gráfico de dispersión de niveles de expresión de genes para WT (Eje X) y mutante (Eje y), para cultivo plantónico (izquierda) y biofilm (derecha). En rojo se distinguen genes con expresión significativamente diferencial.
 
